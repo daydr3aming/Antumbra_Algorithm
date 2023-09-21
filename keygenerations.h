@@ -41,7 +41,7 @@ std::vector<uint8_t> keygenerations::keygen() {
     random_device rd;
     std::mt19937_64 gen(std::hash<std::string>{}(plainkey));
 
-    // Generamos una llave de 16 bytes
+    // Dividimos la llave en dos partes de 8 bytes cada una
     uint64_t keyParts[2];
     for (int i = 0; i < 2; ++i) {
         keyParts[i] = gen();
